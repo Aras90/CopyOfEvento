@@ -73,8 +73,8 @@ public class MainClass {
     	
     	
     	
-    	Query query = session.createSQLQuery("Select * from user where Email = '" +"aszymanski18@gmail.com'").addEntity(User.class);
-    	
+    	Query query = session.createSQLQuery("Select * from user where Email = :email").addEntity(User.class);
+    	query.setParameter("email", email);
         return query.list();
        
     	
